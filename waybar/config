@@ -1,9 +1,9 @@
 {
-    "position": "top",
+    "position": "bottom",
     "height": 40,
-    "modules-left": ["custom/music"],
+    "modules-left": ["custom/logo","custom/music"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray","custom/separator","network","custom/separator","pulseaudio","custom/separator","clock"],
+    "modules-right": ["tray","network","pulseaudio","clock"],
 
     "clock": {
         "format": "  {:%H:%M}",
@@ -13,8 +13,8 @@
     "hyprland/workspaces": {
 	"format": "{icon}",
 	"format-icons": {
-		"active": "",
-		"default": ""
+		"active": "󰝤",
+		"default": ""
 	},
        "persistent-workspaces": {
              "*": 3, // 5 workspaces by default on every monitor
@@ -27,8 +27,8 @@
         "spacing":3,
     },
 
-    "custom/separator": {
-        "format": "|",
+    "custom/logo": {
+        "format": "󰣇 ",
         "interval": "once",
         "tooltip": false
    },
@@ -54,26 +54,22 @@
 	"max-length": 60,
     "on-click":"nmcli networking off",
     "on-click-right": "nmcli networking on",
-    "on-click-middle": "sh ~/.config/wofi/wofi-wifi-menu.sh"
     },
 
-},
-
-"custom/music": {
+    "custom/music": {
     "format": "{icon}{}",
     "format-icons": {
         "Playing": "  ", // Uncomment if not using caway
         "Paused": "  ",
-        "Stopped": "" // This stop symbol is RTL. So &#x202d; is left-to-right override.
+        "Stopped": "&#x202d;ﭥ " // This stop symbol is RTL. So &#x202d; is left-to-right override.
     },
     "escape": true,
     "tooltip": true,
-    "exec": "sh ~/.config/waybar/module/caway/caway -e",
+    "exec": "~/.config/waybar/module/caway/caway -e ",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl previous",
-    "on-scroll-down": "playerctl next",
-    "on-click-right": "g4music",
     "max-length": 30
-}
+},
+
 }

@@ -10,7 +10,7 @@ border-width = 0
 
 outline-width = 0
 
-padding-left = 35%
+padding-left = 35% 
 
 padding-top = 35%
 
@@ -28,7 +28,7 @@ selection-color = #6f7375
 
 fuzzy-match = true
 
-drun-launch = fale
+drun-launch = false
 
 font-size = 16
 
